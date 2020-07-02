@@ -9,17 +9,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Shopping List</title>
-  <link href="<?php echo base_url() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>/assets/second/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="<?php echo base_url() ?>assets/asie/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>/assets/second/asie/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="<?php echo base_url() ?>assets/custom.css" rel="stylesheet">
-  <link href="<?php echo base_url() ?>assets/jquery/jquery-ui.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>/assets/second/custom.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>/assets/second/jquery/jquery-ui.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="<?php echo base_url() ?>assets/asie/js/ie-emulation-modes-warning.js"></script>
+  <script src="<?php echo base_url() ?>/assets/second/asie/js/ie-emulation-modes-warning.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -40,14 +40,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="<?php echo base_url() ?>assets/logo.png">
+        <a class="navbar-brand" href="#"><img src="<?php echo base_url() ?>/assets/second/logo.png">
         </a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="<?php echo base_url() ?>">Home</a></li>
-          <li><a href="<?php echo base_url() ?>page/cara_bayar"><i class="glyphicon glyphicon-briefcase"></i> Cara Bayar</a></li>
-          <li><a href="<?php echo base_url() ?>shopping/tampil_cart"><i class="glyphicon glyphicon-shopping-cart"></i> Keranjang Belanja</a></li>
+          <li><a href="<?php echo base_url() ?>user/cara_bayar"><i class="glyphicon glyphicon-briefcase"></i> Cara Bayar</a></li>
+          <li><a href="<?php echo base_url() ?>user/tampil_cart"><i class="glyphicon glyphicon-shopping-cart"></i> Keranjang Belanja</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -60,21 +60,22 @@
     <div class="row">
 
       <div class="col-lg-3">
-
+        <br>
+        <br>
         <div class="list-group">
           <a class="list-group-item"><strong>KATEGORI</strong></a>
-          <a href="<?php echo base_url() ?>shopping/index/" class="list-group-item">Semua</a>
+          <a href="<?php echo base_url() ?>user/index/" class="list-group-item">Semua</a>
           <?php
-          foreach ($kategori as $row) {
+          foreach ($category as $row) {
           ?>
-            <a href="<?php echo base_url() ?>shopping/index/<?php echo $row['id']; ?>" class="list-group-item"><?php echo $row['nama_kategori']; ?></a>
+            <a href="<?php echo base_url() ?>user/index/<?php echo $row['category_name']; ?>" class="list-group-item"><?php echo $row['category_name']; ?></a>
           <?php
           }
           ?>
         </div><br>
 
         <div class="list-group">
-          <a href="<?php echo base_url() ?>shopping/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG BELANJA</strong></a>
+          <a href="<?php echo base_url() ?>user/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG BELANJA</strong></a>
           <?php
 
           $cart = $this->cart->contents();
